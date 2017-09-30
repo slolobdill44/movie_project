@@ -1,0 +1,53 @@
+h1 {
+  color: #00008B;
+}
+
+.movie-tile-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-tile-image-container {
+  width: 10%;
+  min-width: 150px;
+}
+
+.movie-tile-image {
+  height: 190px;
+  width: 130px;
+  padding: 2px 20px 0 5px;
+}
+
+.movie-tile-info-container {
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-tile-title-section {
+  border: 1px solid black;
+}
+
+.movie-tile-description-section {
+  border: 1px solid black;
+  font-size: 13px;
+}
+
+.movie-tile-people-section {
+  border: 1px solid black;
+
+}
+
+.movie-tile-people-director {
+
+}
+
+.movie-tile-people-stars {
+
+}
+
+.add-watchlist-button {
+
+}
