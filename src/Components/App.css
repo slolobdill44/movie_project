@@ -2,10 +2,17 @@ h1 {
   color: #00008B;
 }
 
+a {
+  text-decoration: none
+}
+
 .movie-tile-container {
-  border: 1px solid black;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 13px;
   display: flex;
   flex-direction: row;
+  font-family: Verdana, Arial, sans-serif;
 }
 
 .movie-tile-image-container {
@@ -21,33 +28,51 @@ h1 {
 
 .movie-tile-info-container {
   padding-top: 3px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.movie-tile-title-section {
-  border: 1px solid black;
+.movie-tile-title-container {
+  margin-bottom: 15px;
+}
+
+.movie-tile-title {
+  font-weight: bold;
+}
+
+.movie-tile-year {
+  font-size: 13px;
+  color: #999;
+}
+
+.movie-tile-rating {
+  margin: 3px 0 3px;
 }
 
 .movie-tile-description-section {
-  border: 1px solid black;
+  margin-bottom: 15px;
   font-size: 13px;
+  line-height: 140%;
 }
 
 .movie-tile-people-section {
-  border: 1px solid black;
-
+  font-size: 11px;
 }
 
 .movie-tile-people-director {
-
+  margin: 3px 0 3px;
 }
 
-.movie-tile-people-stars {
-
+.movie-tile-mpaa-rating {
+  margin: 3px 0 5px;
 }
 
-.add-watchlist-button {
-
+.read-review-button {
+  margin: 3px 0 3px;
+  background-color: lightyellow;
+  border-radius: 3px;
+  border-style: outset;
+  cursor: pointer;
 }
