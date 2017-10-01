@@ -46,7 +46,7 @@ class MovieTile extends React.Component {
               <div className="movie-tile-mpaa-rating">Rating: R</div>
               <button onClick={this.toggleDescription} className="read-review-button">Read Review</button>
             </div>
-            <div className={this.state.showDescription ? "show": "hide"}>Duncan Jones second film, equally smart science fiction as Moon. A really fun action-y mental trip through a seemingly normal sequence of events that gets progressively weirder as you dive deeper into the rabbit hole. Great film, great acting, great directing.</div>
+            <div className={this.state.showDescription ? "show": "hide"}>"Duncan Jones' second film, equally smart science fiction as Moon. A really fun action-y mental trip through a seemingly normal sequence of events that gets progressively weirder as you dive deeper into the rabbit hole. Great film, great acting, great directing."</div>
           </div>
         </section>
       </div>

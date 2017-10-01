@@ -8,6 +8,8 @@ a {
 
 .show {
   display: block;
+  font-size: 13px;
+  line-height: 140%;
 }
 
 .hide {
@@ -71,6 +73,7 @@ a {
 }
 
 .movie-tile-people-section {
+  margin-bottom: 10px;
   font-size: 11px;
 }
 
