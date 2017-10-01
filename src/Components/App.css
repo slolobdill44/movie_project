@@ -20,9 +20,15 @@ a {
   background: rgba(208,200,200,0.14);
 }
 
+.app-container:nth-child(even) {
+  background: rgba(208,200,200,0.07);
+}
+
 .movie-tile-container {
   width: 95%;
   margin: 0 auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
   padding-top: 13px;
   display: flex;
   flex-direction: row;

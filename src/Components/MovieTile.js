@@ -48,7 +48,7 @@ class MovieTile extends React.Component {
 
     const longerSynopsis = (!this.state.expandSynopsis ?
       <div className="movie-tile-description-section">
-        {this.props.synopsis.slice(0,350)}... <text className="movie-tile-description-toggle-text" onClick={this.toggleSynopsis}>more</text> ({this.props.runtime} mins.)
+        {this.props.synopsis.slice(0,320)}... <text className="movie-tile-description-toggle-text" onClick={this.toggleSynopsis}>more</text> ({this.props.runtime} mins.)
       </div> :
       <div className="movie-tile-description-section">
         {this.props.synopsis} <text className="movie-tile-description-toggle-text" onClick={this.toggleSynopsis}>less</text> ({this.props.runtime} mins.)
@@ -66,7 +66,7 @@ class MovieTile extends React.Component {
                 <text className="movie-tile-list-number">{this.props.id}. </text><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
               </div>
             </div>
-            <div className="movie-tile-description-section">{this.props.synopsis.length > 350 ? longerSynopsis : shorterSynopsis}</div>
+            <div className="movie-tile-description-section">{this.props.synopsis.length > 320 ? longerSynopsis : shorterSynopsis}</div>
             <div className="movie-tile-people-section">
               <div className="movie-tile-people-director">Director: {this.props.director}</div>
               <div className="movie-tile-mpaa-rating">Rating: {this.props.rating}</div>
