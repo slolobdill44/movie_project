@@ -8,10 +8,26 @@ class MovieTile extends React.Component {
 
   constructor(props){
     super(props);
-    
+
+    this.state = {
+      showDescription: false
+    };
+
+    this.toggleDescription = this.toggleDescription.bind(this);
+  }
+
+  toggleDescription() {
+    if (this.state.showDescription === false) {
+      this.setState({showDescription: true});
+      console.log(this.state.showDescription);
+    } else {
+      this.setState({showDescription: false});
+      console.log(this.state.showDescription);
+    }
   }
 
   render() {
+
     return (
       <div>
         <section className="movie-tile-container">
@@ -28,8 +44,9 @@ class MovieTile extends React.Component {
             <div className="movie-tile-people-section">
               <div className="movie-tile-people-director">Director: Duncan Jones</div>
               <div className="movie-tile-mpaa-rating">Rating: R</div>
-              <button className="read-review-button">Read Review</button>
+              <button onClick={this.toggleDescription} className="read-review-button">Read Review</button>
             </div>
+            <div className={this.state.showDescription ? "show": "hide"}>Duncan Jones second film, equally smart science fiction as Moon. A really fun action-y mental trip through a seemingly normal sequence of events that gets progressively weirder as you dive deeper into the rabbit hole. Great film, great acting, great directing.</div>
           </div>
         </section>
       </div>
