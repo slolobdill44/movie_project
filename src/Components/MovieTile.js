@@ -10,7 +10,8 @@ class MovieTile extends React.Component {
     super(props);
 
     this.state = {
-      showDescription: false
+      showDescription: false,
+      expandSynopsis: true
     };
 
     this.toggleDescription = this.toggleDescription.bind(this);
@@ -19,10 +20,16 @@ class MovieTile extends React.Component {
   toggleDescription() {
     if (this.state.showDescription === false) {
       this.setState({showDescription: true});
-      console.log(this.state.showDescription);
     } else {
       this.setState({showDescription: false});
-      console.log(this.state.showDescription);
+    }
+  }
+
+  toggleSynopsis() {
+    if (this.state.showSynopsis === false) {
+      this.setState({showSynopsis: true});
+    } else {
+      this.setState({showSynopsis: false});
     }
   }
 
@@ -37,10 +44,10 @@ class MovieTile extends React.Component {
           <div className="movie-tile-info-container">
             <div className="movie-tile-title-container">
               <div className="movie-tile-title-section-text">
-                <b className="movie-tile-list-number">{this.props.id}. </b><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><b className="movie-tile-year"> ({this.props.year})</b>
+                <b className="movie-tile-list-number">{this.props.id}. </b><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
               </div>
             </div>
-            <div className="movie-tile-description-section">{this.props.synopsis}</div>
+            <div className="movie-tile-description-section">{this.props.synopsis} ({this.props.runtime} mins.)</div>
             <div className="movie-tile-people-section">
               <div className="movie-tile-people-director">Director: {this.props.director}</div>
               <div className="movie-tile-mpaa-rating">Rating: {this.props.rating}</div>
