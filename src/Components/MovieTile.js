@@ -35,8 +35,10 @@ class MovieTile extends React.Component {
 
   render() {
 
+
+
     return (
-      <div>
+      <div className="app-container">
         <section className="movie-tile-container">
           <div className="movie-tile-image-container">
             <img className="movie-tile-image" src={this.props.coverUrl}></img>
@@ -44,7 +46,7 @@ class MovieTile extends React.Component {
           <div className="movie-tile-info-container">
             <div className="movie-tile-title-container">
               <div className="movie-tile-title-section-text">
-                <b className="movie-tile-list-number">{this.props.id}. </b><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
+                <text className="movie-tile-list-number">{this.props.id}. </text><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
               </div>
             </div>
             <div className="movie-tile-description-section">{this.props.synopsis} ({this.props.runtime} mins.)</div>
