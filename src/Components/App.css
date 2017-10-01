@@ -69,6 +69,12 @@ a {
   line-height: 140%;
 }
 
+.movie-tile-description-toggle-text {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .movie-tile-people-section {
   margin-bottom: 10px;
   font-size: 11px;
@@ -90,4 +96,8 @@ a {
   border-radius: 3px;
   border: 1px solid lightgrey;
   cursor: pointer;
+}
+
+.read-review-button:focus {
+  outline:0;
 }

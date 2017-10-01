@@ -11,10 +11,11 @@ class MovieTile extends React.Component {
 
     this.state = {
       showDescription: false,
-      expandSynopsis: true
+      expandSynopsis: false
     };
 
     this.toggleDescription = this.toggleDescription.bind(this);
+    this.toggleSynopsis = this.toggleSynopsis.bind(this);
   }
 
   toggleDescription() {
@@ -26,16 +27,32 @@ class MovieTile extends React.Component {
   }
 
   toggleSynopsis() {
-    if (this.state.showSynopsis === false) {
-      this.setState({showSynopsis: true});
+    if (this.state.expandSynopsis === false) {
+      this.setState({expandSynopsis: true});
     } else {
-      this.setState({showSynopsis: false});
+      this.setState({expandSynopsis: false});
     }
   }
 
   render() {
 
+    const synopsisLength = this.props.synopsis.length;
 
+    //if the synopsis length is longer than 140 characters and has not been expanded by the user,
+    //show a shortened synopsis with an ellipses and a more button
+    const shorterSynopsis = (
+      <div className="movie-tile-description-section">
+        {this.props.synopsis} ({this.props.runtime} mins.)
+      </div>
+    )
+
+    const longerSynopsis = (!this.state.expandSynopsis ?
+      <div className="movie-tile-description-section">
+        {this.props.synopsis.slice(0,350)}... <text className="movie-tile-description-toggle-text" onClick={this.toggleSynopsis}>more</text> ({this.props.runtime} mins.)
+      </div> :
+      <div className="movie-tile-description-section">
+        {this.props.synopsis} <text className="movie-tile-description-toggle-text" onClick={this.toggleSynopsis}>less</text> ({this.props.runtime} mins.)
+      </div>)
 
     return (
       <div className="app-container">
@@ -49,13 +66,13 @@ class MovieTile extends React.Component {
                 <text className="movie-tile-list-number">{this.props.id}. </text><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
               </div>
             </div>
-            <div className="movie-tile-description-section">{this.props.synopsis} ({this.props.runtime} mins.)</div>
+            <div className="movie-tile-description-section">{this.props.synopsis.length > 350 ? longerSynopsis : shorterSynopsis}</div>
             <div className="movie-tile-people-section">
               <div className="movie-tile-people-director">Director: {this.props.director}</div>
               <div className="movie-tile-mpaa-rating">Rating: {this.props.rating}</div>
               <button onClick={this.toggleDescription} className="read-review-button">Read Review</button>
             </div>
-            <div className={this.state.showDescription ? "show": "hide"}>{this.props.userReview}</div>
+            <div className={this.state.showDescription ? "show": "hide"}>"{this.props.userReview}"</div>
           </div>
         </section>
       </div>
