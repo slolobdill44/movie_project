@@ -29,7 +29,8 @@ a {
   margin: 0 auto;
   margin-top: 1px;
   margin-bottom: 1px;
-  padding-top: 13px;
+  padding-top: 11px;
+  padding-bottom: 13px;
   display: flex;
   flex-direction: row;
   font-family: Verdana, Arial, sans-serif;
