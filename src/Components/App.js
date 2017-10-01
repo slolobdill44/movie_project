@@ -5,7 +5,6 @@ import MovieTile from './MovieTile';
 import { reviews, movies } from '../data.json';
 
 //css
-require('style-loader!./Reset.css');
 require('style-loader!./App.css');
 
 class App extends React.Component {
@@ -22,8 +21,6 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({reviews: reviews});
     this.setState({movies: movies});
-    // console.log(this.state);
-    console.log(movies);
   }
 
   render() {

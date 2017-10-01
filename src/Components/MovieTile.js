@@ -2,8 +2,6 @@
 
 import React, { Component } from 'react';
 
-require('style-loader!./App.css');
-
 class MovieTile extends React.Component {
 
   constructor(props){
