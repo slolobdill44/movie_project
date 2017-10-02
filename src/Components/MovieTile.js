@@ -8,28 +8,20 @@ class MovieTile extends React.Component {
     super(props);
 
     this.state = {
-      showDescription: false,
+      showReview: false,
       expandSynopsis: false
     };
 
-    this.toggleDescription = this.toggleDescription.bind(this);
+    this.toggleReview = this.toggleReview.bind(this);
     this.toggleSynopsis = this.toggleSynopsis.bind(this);
   }
 
-  toggleDescription() {
-    if (this.state.showDescription === false) {
-      this.setState({showDescription: true});
-    } else {
-      this.setState({showDescription: false});
-    }
+  toggleSynopsis() {
+    this.setState({expandSynopsis: !this.state.expandSynopsis});
   }
 
-  toggleSynopsis() {
-    if (this.state.expandSynopsis === false) {
-      this.setState({expandSynopsis: true});
-    } else {
-      this.setState({expandSynopsis: false});
-    }
+  toggleReview() {
+    this.setState({showReview: !this.state.showReview});
   }
 
   render() {
@@ -59,18 +51,16 @@ class MovieTile extends React.Component {
             <img className="movie-tile-image" src={this.props.coverUrl}></img>
           </div>
           <div className="movie-tile-info-container">
-            <div className="movie-tile-title-container">
-              <div className="movie-tile-title-section-text">
-                <text className="movie-tile-list-number">{this.props.id}. </text><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
-              </div>
+            <div className="movie-tile-title-section-text">
+              <text className="movie-tile-list-number">{this.props.id}. </text><a className="movie-tile-title" href={`${this.props.infoLink}`}>{this.props.title}</a><text className="movie-tile-year"> ({this.props.year})</text>
             </div>
             <div className="movie-tile-description-section">{this.props.synopsis.length > 320 ? longerSynopsis : shorterSynopsis}</div>
             <div className="movie-tile-people-section">
               <div className="movie-tile-people-director">Director: {this.props.director}</div>
               <div className="movie-tile-mpaa-rating">Rating: {this.props.rating}</div>
-              <button onClick={this.toggleDescription} className="read-review-button">Read Review</button>
+              <button onClick={this.toggleReview} className="read-review-button">{this.state.showReview ? "Close Review" : "Open Review"}</button>
             </div>
-            <div className={this.state.showDescription ? "show": "hide"}>"{this.props.userReview}"</div>
+            <div className={this.state.showReview ? "show": "hide"}>"{this.props.userReview}"</div>
           </div>
         </section>
       </div>

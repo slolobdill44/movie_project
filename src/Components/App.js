@@ -19,12 +19,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({reviews: reviews});
-    this.setState({movies: movies});
+    this.setState({reviews: reviews, movies: movies});
   }
 
   render() {
     const movieList = this.state.movies.map(movie => {
+
+      //if the data were structured differently blah blah
       let userReview = this.state.reviews.find(movieReview => {
         return movieReview["movie-id"] === movie.id
       });
